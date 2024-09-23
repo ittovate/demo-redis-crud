@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: rediscrudapp
+  data:
+    redis:
+      user: default
+      password: PvXxjoMKQfTrSfN1WPM8BO08IqQZYgtc
+      host: redis-10620.c8.us-east-1-2.ec2.redns.redis-cloud.com
+      port: 10620
