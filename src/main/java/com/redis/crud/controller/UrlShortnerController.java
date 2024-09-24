@@ -1,6 +1,9 @@
 package com.redis.crud.controller;
 
+import com.redis.crud.dto.RequestUrlDto;
 import com.redis.crud.service.UrlShortener;
+import jakarta.validation.Valid;
+import org.hibernate.validator.constraints.URL;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,8 +22,8 @@ public class UrlShortnerController {
     }
 
     @PostMapping("/")
-    public String addUrl(@RequestBody String url){
-        return urlShortener.createUrl(url);
+    public String addUrl(@RequestBody @Valid RequestUrlDto requestUrlDto){
+        return urlShortener.createUrl(requestUrlDto.getUrl());
     }
 
 }
